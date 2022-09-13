@@ -12,5 +12,7 @@ public interface IProductService {
 	List<Product> getAllProducts();
 
 	Optional<Product> getProduct(Integer Id);
+	
+	Product updateProduct(Product product,Integer Id);
 
 }
