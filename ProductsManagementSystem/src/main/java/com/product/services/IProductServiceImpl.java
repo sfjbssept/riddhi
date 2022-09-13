@@ -49,4 +49,10 @@ public class IProductServiceImpl implements IProductService {
 		return existingProduct;
 	}
 
+	@Override
+	public void deleteProduct(Integer Id) {
+		productRepository.deleteById(Id);
+		
+	}
+
 }
