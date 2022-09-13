@@ -59,4 +59,9 @@ public class ProductController {
 		}
 		return responseEntitiy;
 	}
+	
+	@DeleteMapping("/removeallprodcts")
+	public void deleteAllProducts() {
+		productService.deleteAllProducts();
+	}
 }

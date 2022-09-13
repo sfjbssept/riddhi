@@ -16,5 +16,7 @@ public interface IProductService {
 	Product updateProduct(Product product,Integer Id);
 	
 	public void deleteProduct(Integer Id);
+	
+	public void deleteAllProducts();
 
 }
