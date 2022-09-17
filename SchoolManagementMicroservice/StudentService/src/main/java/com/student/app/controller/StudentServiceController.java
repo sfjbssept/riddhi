@@ -22,9 +22,17 @@ public class StudentServiceController {
 		List<Student> lst = new ArrayList<Student>();
 		Student std = new Student("Riddhi", "Class12");
 		lst.add(std);
-	
+		std = new Student("Kshitij","Class11");
+		lst.add(std);
 		schoolDB.put("school1", lst);
 		
+		lst = new ArrayList<Student>();
+		std = new Student("Birva", "Class11");
+		lst.add(std);
+		std = new Student("Jigar","Class12");
+		lst.add(std);
+		
+		schoolDB.put("school2", lst);
 	}
 	
 	@RequestMapping(value = "/getStudentDetailsForSchool/{schoolname}", method = RequestMethod.GET)
@@ -33,7 +41,7 @@ public class StudentServiceController {
 		List<Student> studentList = schoolDB.get(schoolname);
 		if(studentList == null) {
 			studentList = new ArrayList<Student>();
-			Student std = new Student("Not found 404","N/A");
+			Student std = new Student("Not founds 404","N/A");
 			studentList.add(std);
 		}
 		return studentList;
