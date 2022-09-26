@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -48,7 +48,7 @@ public class AppControllerTest {
 	@Value("${user.user1.password}")
 	String password;
 	
-	@Value("${user.user1.username}")
+	@Value("${admin.user1.username}")
 	String admin_name1;
 	
 	@Value("${user.user1.password}")
@@ -58,9 +58,8 @@ public class AppControllerTest {
 	public void testEmployeeGet() throws Exception{
 		ResultActions responseEntity = processApiRequest(geturl,HttpMethod.GET,null,null,username1,password);
 		responseEntity.andExpect(status().isOk());
-		ObjectMapper mapper = new ObjectMapper();
 		String result = responseEntity.andReturn().getResponse().getContentAsString();
-		assertEquals("get employee", result);
+		assertEquals("Get Employees", result);
 		
 	}
 	
