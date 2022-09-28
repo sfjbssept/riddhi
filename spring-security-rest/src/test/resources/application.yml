@@ -9,16 +9,16 @@ management:
     
 employee:
   get:
-    url:  /get
+    url: /get
     
   post:
-    url:  /post
+    url: /post
   
   put:
-    url:  /put/{name}
+    url: /put/{name}
    
   delete:
-    url:  /delete/{name}
+    url: /delete/{name}
 
 user:
   user1:
